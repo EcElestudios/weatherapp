@@ -105,14 +105,6 @@ all_out = f"The time is now {atime[2]}/{atime[1]}/{atime[0]} {atime[3]:02d}:{ati
 # -------------------------------------------------
 st.code(all_out, language="text")   # preserves line-breaks exactly
 
-# Optional: pretty metrics next to the text
-col1, col2 = st.columns(2)
-with col1:
-    st.metric("Temp", f"{current_temp_c}°C", f"{current_temp_f}°F")
-    st.metric("Feels", f"{feelslike_c}°C", f"{feelslike_f}°F")
-with col2:
-    st.metric("Humidity", f"{humid}%")
-    st.metric("Wind", f"{wind_kph} kph", f"{wind_mph} mph")
 
 # -------------------------------------------------
 # Auto-rerun (every second) so the counter keeps ticking
