@@ -143,18 +143,8 @@ all_out = f"The time is now {atime[2]}/{atime[1]}/{atime[0]} {atime[3]:02d}:{ati
 # -------------------------------------------------
 # Show current mode
 current_mode = "Light" if (theme == "light" or (theme is None and "light" in st.get_option("theme.base"))) else "Dark"
-st.caption(f"**Theme:** {current_mode} Mode (Auto-detected from Starbase time)")
 
 st.code(all_out, language="text")
-
-# Optional metrics
-col1, col2 = st.columns(2)
-with col1:
-    st.metric("Temp", f"{current_temp_c}°C", f"{current_temp_f}°F")
-    st.metric("Feels", f"{feelslike_c}°C", f"{feelslike_f}°F")
-with col2:
-    st.metric("Humidity", f"{humid}%")
-    st.metric("Wind", f"{wind_kph} kph", f"{wind_mph} mph")
 
 # -------------------------------------------------
 # Auto-rerun every second
